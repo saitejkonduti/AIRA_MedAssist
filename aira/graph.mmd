@@ -1,0 +1,20 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	Collect_Patient_Details(Collect Patient Details)
+	Summarize_Clinical_Notes(Summarize Clinical Notes)
+	Generate_Referral_Recommendation(Generate Referral Recommendation)
+	Load_Data_to_File(Load Data to File)
+	__end__([<p>__end__</p>]):::last
+	Collect_Patient_Details --> Summarize_Clinical_Notes;
+	Generate_Referral_Recommendation --> Load_Data_to_File;
+	Summarize_Clinical_Notes --> Generate_Referral_Recommendation;
+	__start__ --> Collect_Patient_Details;
+	Load_Data_to_File --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
